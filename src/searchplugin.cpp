@@ -1,11 +1,12 @@
+#include <QDebug>
 #include "search.h"
 #include "searchplugin.h"
-#include "ui/searchdialog.h"
+// #include "ui/searchdialog.h"
 
 #include "scribuscore.h"
 #include "scribusdoc.h"
 
-#include "ui/multiprogressdialog.h"
+// #include "ui/multiprogressdialog.h"
 
 int searchplugin_getPluginAPIVersion()
 {
@@ -40,14 +41,15 @@ SearchPlugin::~SearchPlugin()
 
 void SearchPlugin::languageChange()
 {
+    qDebug() << "chuilala";
 	// Note that we leave the unused members unset. They'll be initialised
 	// with their default ctors during construction.
 	// Action name
-	m_actionInfo.name = "SearchAndReplace";
+	m_actionInfo.name = "AleSearchAndReplace";
 	// Action text for menu, including accel
-	m_actionInfo.text = tr("&Search and replace...");
+	m_actionInfo.text = tr("&AleSearch and replace...");
 	// Menu
-	m_actionInfo.menu = "Edit";
+	m_actionInfo.menu = "Extras";
 	m_actionInfo.enabledOnStartup = false;
 	m_actionInfo.needsNumObjects = -1;
 }
@@ -85,6 +87,13 @@ bool SearchPlugin::run(ScribusDoc* doc, QString target)
 
     SearchOptions options;
 
+    Search *search = new Search();
+    search->doSearch();
+    // search->doSearchAndReplace();
+
+    return true;
+
+    /*
 	SearchDialog *dialog = new SearchDialog(currDoc->scMW(), currDoc, "dlg", true, 0);
     dialog->setOptions(options);
 	if (dialog)
@@ -107,4 +116,5 @@ bool SearchPlugin::run(ScribusDoc* doc, QString target)
 	}
 	else
 		return false;
+    */
 }

@@ -1,12 +1,14 @@
 #include <QDebug>
 
+#include <QQuickView>
+
 #include "search.h"
 #include "scribusdoc.h"
 
-#include "module/scribusAPIDocument.h"
-#include "module/searchEpubfile.h"
-#include "module/searchStructure.h"
-#include "module/searchContent.h"
+// #include "module/scribusAPIDocument.h"
+// #include "module/searchEpubfile.h"
+// #include "module/searchStructure.h"
+// #include "module/searchContent.h"
 
 Search::Search()
 {
@@ -23,6 +25,9 @@ Search::~Search()
 
 void Search::doSearch()
 {
+    QQuickView view;
+    view.setSource(QUrl::fromLocalFile("ui/test.qml"));
+    view.show();
     // qDebug() << "options" << options;
 }
 

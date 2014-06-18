@@ -2,8 +2,8 @@
  * This is the main epub export class.
  * It gets called from the plugin class after the options have been set in the dialog
  */
-#ifndef EPUBEXPORT_H
-#define EPUBEXPORT_H
+#ifndef EDITSEARCH_H
+#define EDITSEARCH_H
 
 #include <QObject>
 
@@ -52,4 +52,4 @@ private:
 
 QDebug operator<<(QDebug dbg, const SearchOptions options);
 
-#endif // EPUBEXPORT_H
+#endif // EDITSEARCH_H
