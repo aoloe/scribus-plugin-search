@@ -1,6 +1,10 @@
 # scribus-plugin-search
 
-implementing search and replace as a plugin
+Implementing search and replace as a plugin
+
+This is also the first try to get qtquick into a Scribus plugin.
+
+(If you want to know why I'm interested in exploring qtquick, have a look at [Introducing Qt Quick Controls in Qt 5.1](https://www.youtube.com/watch?v=_6_F6Kpjd-Q).)
 
 # Resources
 
